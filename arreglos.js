@@ -1,3 +1,4 @@
+
 let arregloIzquierdo = [12, 15];
 
 let arregloDerecho = [20, 25];
@@ -32,4 +33,21 @@ function eliminarIzquierdo(indice) {
     pintarArregloIzquierda();
 }
 
+function pintarArregloDerecha() {
+    let tabla = document.getElementById("tablaDerecha");
+
+    let contenido = "";
+
+    for (let i = 0; i < arregloDerecho.length; i++) {
+        contenido += "<tr>";
+        contenido += '<td><button class="btn-mover" onclick="moverHaciaIzquierda(' + i + ')">⬅</button></td>';
+        contenido += "<td>" + arregloDerecho[i] + "</td>";
+        contenido += '<td><button class="btn-eliminar" onclick="eliminarDerecho(' + i + ')">Eliminar</button></td>';
+        contenido += "</tr>";
+    }
+
+    tabla.innerHTML = contenido;
+}
+
 pintarArregloIzquierda();
+pintarArregloDerecha();
