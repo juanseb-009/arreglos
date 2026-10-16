@@ -7,5 +7,23 @@ function agregarEdad() {
 
     arregloIzquierdo.push(edad);
 
-    console.log(arregloIzquierdo);
+    pintarArregloIzquierda();
 }
+
+function pintarArregloIzquierda() {
+    let tabla = document.getElementById("tablaIzquierda");
+
+    let contenido = "";
+
+    for (let i = 0; i < arregloIzquierdo.length; i++) {
+        contenido += "<tr>";
+        contenido += "<td>" + arregloIzquierdo[i] + "</td>";
+        contenido += '<td><button class="btn-eliminar" onclick="eliminarIzquierdo(' + i + ')">Eliminar</button></td>';
+        contenido += '<td><button class="btn-mover" onclick="moverHaciaDerecha(' + i + ')">➜</button></td>';
+        contenido += "</tr>";
+    }
+
+    tabla.innerHTML = contenido;
+}
+
+pintarArregloIzquierda();
