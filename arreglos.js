@@ -49,5 +49,11 @@ function pintarArregloDerecha() {
     tabla.innerHTML = contenido;
 }
 
+function eliminarDerecho(indice) {
+    arregloDerecho.splice(indice, 1);
+
+    pintarArregloDerecha();
+}
+
 pintarArregloIzquierda();
 pintarArregloDerecha();
