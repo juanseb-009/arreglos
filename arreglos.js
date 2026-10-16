@@ -26,4 +26,10 @@ function pintarArregloIzquierda() {
     tabla.innerHTML = contenido;
 }
 
+function eliminarIzquierdo(indice) {
+    arregloIzquierdo.splice(indice, 1);
+
+    pintarArregloIzquierda();
+}
+
 pintarArregloIzquierda();
